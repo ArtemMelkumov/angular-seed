@@ -13,11 +13,26 @@ div {
 }
 
 /* Set up a default font and some padding to provide breathing room */
+html {
+  min-height: 100%;
+  padding:0;
+}
+
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  background-color: #2E2A30 !important;
+  min-height: 100%;
+}
+
+.container {
+  width: 1370px;
+  margin: 0 auto;
+  padding:0 15px;
+  overflow: hidden;
 }
 
 p {

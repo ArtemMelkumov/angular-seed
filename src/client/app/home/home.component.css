@@ -3,11 +3,41 @@
   padding: 0 16px;
 }
 
-input {
-  width: 250px;
+.film-block {
+  margin-top: 130px;
+  padding: 50px 40px 40px;
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.03);
 }
 
-ul {
-  list-style-type: none;
-  padding: 0 0 0 8px;
+.block-header {
+  font-size: 24px;
+  height: 40px;
+  position: relative;
+  line-height: 40px;
+  margin: 0 2px 15px 2px;
+}
+
+.header-high-content {
+  text-transform: uppercase;
+  color: #FFEB3B;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.header-low-content {
+  color: #fff;
+  text-transform: lowercase;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.description-block {
+  margin-left: 0;
+  margin-bottom: 20px;
+  color: #54575C;
+  font-size: 16px;
+  max-width: 1200px;
+  position: relative;
+  top: -15px;
 }

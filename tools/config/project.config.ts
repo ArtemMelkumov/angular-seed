@@ -59,6 +59,13 @@ export class ProjectConfig extends SeedConfig {
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
+
+    this.SYSTEM_CONFIG.paths['jquery'] = `${this.APP_BASE}node_modules/jquery/dist/jquery.min.js`;
+    this.SYSTEM_CONFIG.paths['slick'] = `${this.APP_BASE}node_modules/slick-carousel/slick/slick.min.js`;
+
+    // Production
+    this.SYSTEM_BUILDER_CONFIG.paths['owl-carousel'] = `node_modules/owl.carousel/dist/owl.carousel.min.js`;
+    this.SYSTEM_CONFIG.paths['slick'] = `${this.APP_BASE}node_modules/slick-carousel/slick/slick.min.js`;
   }
 
 }

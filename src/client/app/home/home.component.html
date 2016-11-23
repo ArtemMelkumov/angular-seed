@@ -1,10 +1,20 @@
-<p>Howdy! Here's a list of awesome computer scientists. Do you know any others? Add to the list yourself.</p>
-
-<form (submit)="addName()">
-  <input [(ngModel)]="newName" name="newName" placeholder="Awesome Computer Scientist">
-  <button type="submit">Add</button>
-</form>
-
-<ul>
-  <li *ngFor="let name of names">{{name}}</li>
-</ul>
+<section class="film-block">
+  <h1 class="block-header">
+    <span class="header-high-content">Лучшие</span>
+    <span class="header-low-content">фильмы и сериалы 2016 года</span>
+  </h1>
+  <div class="description-block">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dicta iure nam quaerat quos tempore! Adipisci aliquid animi asperiores aspernatur consequuntur doloremque ea esse eveniet facilis iste laboriosam laudantium magnam, molestiae nostrum, nulla numquam placeat porro quo ratione rerum, sequi suscipit ut vel voluptate voluptatem? Ad amet consectetur et porro?
+  </div>
+  <div class="carousel">
+      <div *ngFor="let item of filmsList">
+        <p></p>
+      </div>
+    <div class="slick">
+      <div>vmnvbnbvnvbn</div>
+      <div>qweqweqweqweqweqweqweqwaswgfghdfksgjhdsfkjgh</div>
+      <div>fgh</div>
+      <div>hlhj</div>
+    </div>
+  </div>
+</section>

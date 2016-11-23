@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar/index';
 import { NavbarComponent } from './navbar/index';
+import { OwlCarousel } from './owl-carousel/index';
 import { NameListService } from './name-list/index';
 
 /**
@@ -13,9 +14,9 @@ import { NameListService } from './name-list/index';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [ToolbarComponent, NavbarComponent],
+  declarations: [ToolbarComponent, NavbarComponent, OwlCarousel],
   exports: [ToolbarComponent, NavbarComponent,
-    CommonModule, FormsModule, RouterModule]
+    CommonModule, FormsModule, RouterModule, OwlCarousel]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

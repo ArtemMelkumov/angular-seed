@@ -299,6 +299,8 @@ export class SeedConfig {
     { src: 'systemjs/dist/system.src.js', inject: 'shims', buildType: BUILD_TYPES.DEVELOPMENT },
     // Temporary fix. See https://github.com/angular/angular/issues/9359
     { src: '.tmp/Rx.min.js', inject: 'libs', buildType: BUILD_TYPES.DEVELOPMENT },
+    { src: 'jquery/dist/jquery.min.js', inject: 'shims'},
+    { src: 'slick-carousel/slick/slick.min.js', inject: 'shims'}
   ];
 
   /**

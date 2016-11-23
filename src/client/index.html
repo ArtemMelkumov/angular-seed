@@ -7,40 +7,41 @@
   <title><%= APP_TITLE %></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
   <!-- inject:css -->
   <!-- endinject -->
 </head>
 <body>
 
-  <sd-app>Loading...</sd-app>
+<sd-app>Loading...</sd-app>
 
-  <script>
+<script>
   // Fixes undefined module function in SystemJS bundle
   function module() {}
-  </script>
+</script>
 
-  <!-- shims:js -->
-  <!-- endinject -->
+<!-- shims:js -->
+<!-- endinject -->
 
-  <% if (BUILD_TYPE === 'dev') { %>
-  <script src="<%= APP_BASE %>app/system-config.js"></script>
-  <% } %>
+<% if (BUILD_TYPE === 'dev') { %>
+<script src="<%= APP_BASE %>app/system-config.js"></script>
+<% } %>
 
-  <!-- libs:js -->
-  <!-- endinject -->
+<!-- libs:js -->
+<!-- endinject -->
 
-  <!-- inject:js -->
-  <!-- endinject -->
+<!-- inject:js -->
+<!-- endinject -->
 
-  <% if (BUILD_TYPE === 'dev') { %>
-  <script>
+<% if (BUILD_TYPE === 'dev') { %>
+<script>
   System.import('<%= BOOTSTRAP_MODULE %>')
     .catch(function (e) {
       console.error(e.stack || e,
         'Not expecting this error? Report it at https://github.com/mgechev/angular-seed/issues');
     });
-  </script>
-  <% } %>
+</script>
+<% } %>
 
 </body>
 </html>
