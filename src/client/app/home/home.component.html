@@ -6,15 +6,18 @@
   <div class="description-block">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dicta iure nam quaerat quos tempore! Adipisci aliquid animi asperiores aspernatur consequuntur doloremque ea esse eveniet facilis iste laboriosam laudantium magnam, molestiae nostrum, nulla numquam placeat porro quo ratione rerum, sequi suscipit ut vel voluptate voluptatem? Ad amet consectetur et porro?
   </div>
-  <div class="carousel">
-      <div *ngFor="let item of filmsList">
-        <p></p>
+  <div ipSlider [sliderProperties]="SliderProperties" class="carousel">
+      <div class="slider-item" ipSliderElement *ngFor="let item of filmsList" >
+        <div class="slide-image" [ngStyle]="{ 'background-image': 'url(' + item.image + ')'}">
+        </div>
+        <div class="overlay">
+          <h1 class="overlay-title">{{item.title}}</h1>
+          <div class="icons">
+            <i class="material-icons thumbs-up orange600">thumb_up</i>
+            <i class="material-icons visibility orange600">visibility</i>
+            <i class="material-icons thumbs-down orange600">thumb_down</i>
+          </div>
+        </div>
       </div>
-    <div class="slick">
-      <div>vmnvbnbvnvbn</div>
-      <div>qweqweqweqweqweqweqweqwaswgfghdfksgjhdsfkjgh</div>
-      <div>fgh</div>
-      <div>hlhj</div>
-    </div>
   </div>
 </section>

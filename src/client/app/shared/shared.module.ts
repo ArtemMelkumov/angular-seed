@@ -5,8 +5,9 @@ import { RouterModule } from '@angular/router';
 
 import { ToolbarComponent } from './toolbar/index';
 import { NavbarComponent } from './navbar/index';
-import { OwlCarousel } from './owl-carousel/index';
 import { NameListService } from './name-list/index';
+import { SliderDirective } from './sliderDirective/index';
+import { SliderAddDirective } from './sliderDirective/sliderElement/index';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -14,9 +15,9 @@ import { NameListService } from './name-list/index';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [ToolbarComponent, NavbarComponent, OwlCarousel],
+  declarations: [ToolbarComponent, NavbarComponent, SliderDirective, SliderAddDirective],
   exports: [ToolbarComponent, NavbarComponent,
-    CommonModule, FormsModule, RouterModule, OwlCarousel]
+    CommonModule, FormsModule, RouterModule, SliderAddDirective, SliderDirective]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

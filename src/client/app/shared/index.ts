@@ -4,5 +4,6 @@
 export * from './name-list/index';
 export * from './navbar/index';
 export * from './toolbar/index';
+export * from './sliderDirective/index';
+export * from './sliderDirective/sliderElement/index';
 export * from './config/env.config';
-export * from './owl-carousel/index';
