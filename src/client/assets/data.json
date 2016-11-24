@@ -1,6 +1,26 @@
 [
-  "Edsger Dijkstra",
-  "Donald Knuth",
-  "Alan Turing",
-  "Grace Hopper"
+  {
+    "id": "25",
+    "name": "vasya",
+    "image": "assets/expendables.jpg",
+    "title": "Неудержимые"
+  },
+  {
+    "id": "27",
+    "name": "masha",
+    "image": "assets/legend.jpg",
+    "title": "Legenda"
+  },
+  {
+    "id": "21",
+    "name": "стетхем",
+    "image": "assets/mechanic.jpg",
+    "title": "Mexaник"
+  },
+  {
+    "id": "22",
+    "name": "стетхем",
+    "image": "assets/shvataka.jpg",
+    "title": "Схватка"
+  }
 ]

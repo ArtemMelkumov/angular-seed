@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ToolbarComponent } from './toolbar/index';
 import { NavbarComponent } from './navbar/index';
 import { NameListService } from './name-list/index';
+import { MovieService } from './movie.service/index';
 import { SliderDirective } from './sliderDirective/index';
 import { SliderAddDirective } from './sliderDirective/sliderElement/index';
 
@@ -23,7 +24,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [NameListService]
+      providers: [NameListService, MovieService]
     };
   }
 }

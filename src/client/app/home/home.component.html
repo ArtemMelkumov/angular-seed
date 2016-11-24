@@ -13,7 +13,7 @@
         <div class="overlay">
           <h1 class="overlay-title">{{item.title}}</h1>
           <div class="icons">
-            <i class="material-icons thumbs-up orange600">thumb_up</i>
+            <i class="material-icons thumbs-up orange600" (click)="likeMovie(item.id)">thumb_up</i>
             <i class="material-icons visibility orange600">visibility</i>
             <i class="material-icons thumbs-down orange600">thumb_down</i>
           </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NameListService } from '../shared/index';
+import { MovieService } from '../shared/index';
 import { SliderDirective } from '../shared/index';
 import { SliderAddDirective } from '../shared/index';
 
@@ -50,12 +50,35 @@ export class HomeComponent implements OnInit {
     touchMove: true
   };
 
-  constructor(public nameListService: NameListService) {}
+  constructor(public movieService: MovieService) {}
 
 
   ngOnInit() {
+    this.getMovies()
   }
 
+  getMovies(){
+    this.movieService.get()
+      .subscribe(
+        data => {this.filmsList = data;
+          console.log(this.filmsList);
+        },
+        err => console.error('some error ' + err)
+      );
+  }
+
+
+  likeMovie(id){
+    this.movieService.likeMovie(id)
+      .subscribe((data) => {
+        console.log(data);
+        console.log(`that;s good`);
+      })
+  }
+
+  openTestForFilm(id) {
+    
+  }
 
 
 }
