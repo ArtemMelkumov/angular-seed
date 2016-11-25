@@ -100,35 +100,35 @@ export class HomeComponent implements OnInit {
 
   openTestAreaForFilm(id) {
     this.isTestAreaOpen = !this.isTestAreaOpen;
-    this.buildQuestionObj(id);
-
-  }
+    this.answerArray = this.buildQuestionObj(id);
+  console.log(this.answerArray);
+}
 
   buildQuestionObj(id) {
     var tempArray = [];
     var currentFilm = _.find(this.filmsList, elem => elem.id == id);
     var rightAnswer = {
-      genre: currentFilm.genre[Math.floor(Math.random() * currentFilm.genre.length)],
+      genre: currentFilm.genre_ids[Math.floor(Math.random() * currentFilm.genre_ids.length)],
       answer: true
     };
     this.answerArray.push(rightAnswer);
-    _.invert(this.genresMap);
-    var genresArray = _.keys(this.genresMap);
+    var invertedGenresMap = _.invert(this.genresMap);
+    var genresArray = _.keys(invertedGenresMap);
     _.remove(genresArray,(elem) => {
       return elem == this.answerArray[0].genre
     })
     while(tempArray.length != 3) {
-      var randomGenreId = genresArray[Math.floor(Math.random() * genresArray.genre.length)]
+      var randomGenreId = genresArray[Math.floor(Math.random() * genresArray.length)]
       if(!(_.includes(tempArray,randomGenreId))){
         tempArray.push(randomGenreId)
       }
     }
     _.forEach(tempArray,(elem) => {
-      elem = {genre: elem, answer:false};
-      this.answerArray.push(elem);
+      var element = {genre: elem, answer:false};
+      this.answerArray.push(element);
     })
     _.forEach(this.answerArray, (elem) => {
-      elem.genre = this.genresMap[elem.genre];
+      elem.genre = invertedGenresMap[elem.genre];
     })
     return this.answerArray;
   }
