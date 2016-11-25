@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
     this.movieService.get()
       .subscribe(
         data => {
-          this.filmsList = data;
+          this.filmsList = data.results;
           console.log(this.filmsList);
         },
         err => console.error('some error ' + err)
@@ -66,12 +66,11 @@ export class HomeComponent implements OnInit {
       .subscribe(
         data => {
           this.filmsList = [];
-          this.filmsList = data;
+          this.filmsList = data.results;
           console.log(this.filmsList);
         },
         err => console.error('some error ' + err)
       );
-  }
   }
 
 

@@ -28,7 +28,7 @@
     "serve.e2e": "gulp serve.e2e --color",
     "serve.prod": "gulp serve.prod --color --env-config prod",
     "serve.prod.exp": "gulp serve.prod.exp --color --env-config prod",
-    "start": "gulp serve.dev --color",
+    "start": "gulp serve.dev --color | npm run runExpress",
     "start.deving": "gulp start.deving --color",
     "tasks.list": "gulp --tasks-simple --color",
     "test": "gulp test --color",
@@ -37,7 +37,8 @@
     "webdriver-start": "webdriver-manager start",
     "webdriver-update": "webdriver-manager update",
     "compodoc": "node_modules/.bin/compodoc -p src/client/tsconfig.json",
-    "serve.compodoc": "node_modules/.bin/compodoc -s"
+    "serve.compodoc": "node_modules/.bin/compodoc -s",
+    "runExpress": "node src/server/bin/www"
   },
   "author": "Minko Gechev <mgechev>",
   "license": "MIT",
@@ -143,6 +144,18 @@
     "rxjs": "5.0.0-beta.12",
     "slick-carousel": "^1.6.0",
     "systemjs": "0.19.40",
-    "zone.js": "0.6.25"
+    "zone.js": "0.6.25",
+
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0",
+    "request": "2.78.0",
+    "request-promise": "4.1.1",
+    "imdb-api": "2.2.0",
+    "cors": "2.8.1"
   }
 }
