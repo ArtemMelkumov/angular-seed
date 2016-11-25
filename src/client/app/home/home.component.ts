@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
       .subscribe(
         data => {
           this.filmsList = [];
-          this.filmsList = data.results;
+          this.filmsList = data;
           console.log(this.filmsList);
         },
         err => console.error('some error ' + err)

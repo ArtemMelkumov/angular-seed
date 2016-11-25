@@ -26,7 +26,9 @@ var adviceService = {
                         var bigRatingFilms = films.filter(function (film) {
                             return film.rating == 'big';
                         });
-                        resolve(bigRatingFilms.slice(0,5));
+                        var filmsCount = bigRatingFilms.length;
+                        var startAt = Math.random() * (filmsCount - 5) + 5;
+                        resolve(bigRatingFilms.slice(startAt-5, startAt));
                     })
                     .catch(function (error) {
                         reject(error);
@@ -39,8 +41,8 @@ var adviceService = {
         function findFavoriteGenres() {
             return Object.keys(up.genres)
                 .sort(function(a,b){return up.genres[b]-up.genres[a]})
-                .slice(0, GENRES_COUNT)
-                .join();
+                .slice(0, GENRES_COUNT);
+                // .join();
         }
 
     },
