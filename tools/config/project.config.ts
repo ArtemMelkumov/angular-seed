@@ -62,10 +62,12 @@ export class ProjectConfig extends SeedConfig {
 
     this.SYSTEM_CONFIG.paths['jquery'] = `${this.APP_BASE}node_modules/jquery/dist/jquery.min.js`;
     this.SYSTEM_CONFIG.paths['slick'] = `${this.APP_BASE}node_modules/slick-carousel/slick/slick.min.js`;
+    this.SYSTEM_CONFIG.paths['lodash'] = `${this.APP_BASE}node_modules/lodash/lodash.min.js`;
 
     // Production
     this.SYSTEM_BUILDER_CONFIG.paths['owl-carousel'] = `node_modules/owl.carousel/dist/owl.carousel.min.js`;
-    this.SYSTEM_CONFIG.paths['slick'] = `${this.APP_BASE}node_modules/slick-carousel/slick/slick.min.js`;
+    this.SYSTEM_BUILDER_CONFIG.paths['slick'] = `node_modules/slick-carousel/slick/slick.min.js`;
+    this.SYSTEM_BUILDER_CONFIG.paths['lodash'] = `node_modules/lodash/lodash.min.js`;
   }
 
 }

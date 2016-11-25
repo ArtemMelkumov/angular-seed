@@ -300,7 +300,8 @@ export class SeedConfig {
     // Temporary fix. See https://github.com/angular/angular/issues/9359
     { src: '.tmp/Rx.min.js', inject: 'libs', buildType: BUILD_TYPES.DEVELOPMENT },
     { src: 'jquery/dist/jquery.min.js', inject: 'shims'},
-    { src: 'slick-carousel/slick/slick.min.js', inject: 'shims'}
+    { src: 'slick-carousel/slick/slick.min.js', inject: 'shims'},
+    { src: 'lodash/lodash.min.js', inject: 'shims'}
   ];
 
   /**

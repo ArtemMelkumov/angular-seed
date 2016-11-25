@@ -8,16 +8,22 @@
   </div>
   <div ipSlider [sliderProperties]="SliderProperties" class="carousel">
       <div class="slider-item" ipSliderElement *ngFor="let item of filmsList" >
-        <div class="slide-image" [ngStyle]="{ 'background-image': 'url(' + item.image + ')'}">
+        <div class="slide-image" [ngStyle]="{ 'background-image': 'url( https://image.tmdb.org/t/p/w500/' + item.poster_path + ')'}">
         </div>
         <div class="overlay">
           <h1 class="overlay-title">{{item.title}}</h1>
           <div class="icons">
-            <i class="material-icons thumbs-up orange600" (click)="likeMovie(item.id)">thumb_up</i>
-            <i class="material-icons visibility orange600">visibility</i>
+            <i class="material-icons thumbs-up orange600" (click)="likeMovie(item.genre_ids, item.release_date)">thumb_up</i>
+            <i class="material-icons visibility orange600" (click)="openTestAreaForFilm(item.id)">visibility</i>
             <i class="material-icons thumbs-down orange600">thumb_down</i>
           </div>
         </div>
       </div>
+  </div>
+  <div class="fucking-nice-button">
+    <a href="#" class="round yellow" (click)="getRecommendedFilms()">New 5<span class="round">Кластерный анализ!!!</span></a>
+  </div>
+  <div class="question-area" [ngClass]="{'area-open': isTestAreaOpen}">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, fugit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, officiis.
   </div>
 </section>

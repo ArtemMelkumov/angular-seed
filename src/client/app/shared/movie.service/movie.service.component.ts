@@ -21,21 +21,27 @@ export class MovieService {
    * @return {string[]} The Observable for the HTTP request.
    */
   get(): Observable<string[]> {
-    return this.http.get('/assets/data.json')
+    return this.http.get('http://localhost:3000/films')
       .map((res: Response) => res.json())
       //              .do(data => console.log('server data:', data))  // debug
       .catch(this.handleError);
   }
 
-  likeMovie(id): Observable<string[]> {
-    let bodyString = JSON.stringify(id);
-    let headers      = new Headers({ 'Content-Type': 'application/json' });
-    let options       = new RequestOptions({ headers: headers });
-    return this.http.post('/assets/data.json', bodyString, options )
-      .map((res: Response) => res.text())
+  likeMovie(genresArray,releaseDate): Observable<string[]> {
+    let bodyString = JSON.stringify({genre_ids:genresArray,release_date:releaseDate});
+    return this.http.post('http://localhost:3000/films/chosenFilm', bodyString )
+      .map((res: Response) => res.json())
       //              .do(data => console.log('server data:', data))  // debug
       .catch(this.handleError);
   }
+
+  getRecommendedFilms(): Observable<string[]> {
+    return this.http.get('http://localhost:3000/films/recommend')
+      .map((res: Response) => res.json())
+      //              .do(data => console.log('server data:', data))  // debug
+      .catch(this.handleError);
+  }
+
 
   /**
    * Handle HTTP error

@@ -6,7 +6,8 @@
     "title": "Неудержимые"
   },
   {
-    "id": "27",
+    "id": 27,
+    "genre": [1,2,3],
     "name": "masha",
     "image": "assets/legend.jpg",
     "title": "Legenda"
