@@ -31,7 +31,7 @@ router.get('/recommend', function (req, res) {
 });
 
 router.post('/chosenFilm', function (req, resp) {
-   adviceService.updatePreferences(req.param('year'), req.param('genre'), req.param('rating'))
+   adviceService.updatePreferences(req.body.release_date, req.body.genre_ids)
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@
 var fs = require('../services/filmService');
 var up = require('../model/UserPreference');
 
-var GENRES_COUNT = 2;
+var GENRES_COUNT = 3;
 
 var adviceService = {
 
@@ -47,8 +47,8 @@ var adviceService = {
 
     },
 
-    updatePreferences: function (year, genres, rating) {
-        genres.split(',').forEach(function (genre, i) {
+    updatePreferences: function (year, genres) {
+        genres.forEach(function (genre, i) {
             var upGenre = up.genres[genre];
             if (upGenre) {
                 ++up.genres[genre];
@@ -57,7 +57,6 @@ var adviceService = {
             }
         });
         up.year = parseInt(((up.year*10 + parseInt(year))/11).toFixed(0));
-        up.rating = parseFloat(((up.rating*10 + parseFloat(rating))/11).toFixed(1));
     }
 
 };

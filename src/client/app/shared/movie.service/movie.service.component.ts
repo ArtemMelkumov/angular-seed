@@ -28,8 +28,10 @@ export class MovieService {
   }
 
   likeMovie(genresArray,releaseDate): Observable<string[]> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
     let bodyString = JSON.stringify({genre_ids:genresArray,release_date:releaseDate});
-    return this.http.post('http://localhost:3000/films/chosenFilm', bodyString )
+    return this.http.post('http://localhost:3000/films/chosenFilm', bodyString, options)
       .map((res: Response) => res.json())
       //              .do(data => console.log('server data:', data))  // debug
       .catch(this.handleError);
