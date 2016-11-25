@@ -8,3 +8,4 @@ export * from './toolbar/index';
 export * from './sliderDirective/index';
 export * from './sliderDirective/sliderElement/index';
 export * from './config/env.config';
+export * from './testComponent/index';

@@ -9,6 +9,7 @@ import { NameListService } from './name-list/index';
 import { MovieService } from './movie.service/index';
 import { SliderDirective } from './sliderDirective/index';
 import { SliderAddDirective } from './sliderDirective/sliderElement/index';
+import { TestComponent } from './testComponent/index';
 
 /**
  * Do not specify providers for modules that might be imported by a lazy loaded module.
@@ -16,9 +17,9 @@ import { SliderAddDirective } from './sliderDirective/sliderElement/index';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [ToolbarComponent, NavbarComponent, SliderDirective, SliderAddDirective],
+  declarations: [ToolbarComponent, NavbarComponent, SliderDirective, SliderAddDirective, TestComponent],
   exports: [ToolbarComponent, NavbarComponent,
-    CommonModule, FormsModule, RouterModule, SliderAddDirective, SliderDirective]
+    CommonModule, FormsModule, RouterModule, SliderAddDirective, SliderDirective, TestComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

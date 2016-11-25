@@ -21,9 +21,7 @@
       </div>
   </div>
   <div class="fucking-nice-button">
-    <a href="#" class="round yellow" (click)="getRecommendedFilms()">New 5<span class="round">Кластерный анализ!!!</span></a>
+    <a href="#" class="round yellow" (click)="getRecommendedFilms()">New 5<span class="round">Ирина Тимофеевна у нас тут кластерный анализ!!!</span></a>
   </div>
-  <div class="question-area" [ngClass]="{'area-open': isTestAreaOpen}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, fugit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, officiis.
-  </div>
+  <test-comp class="question-area" [styleProperty]="isTestAreaOpen ? 1 : 0" [testDataObject]="answerArray"></test-comp>
 </section>

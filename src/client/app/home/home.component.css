@@ -147,22 +147,8 @@
 }
 .material-icons.orange600:hover { color: #FFFFFF; }
 
-.question-area {
 
-  opacity: 0;
-  width: 100%;
-  min-height: 150px;
-  border:2px solid #FFEB3B;
-  padding: 20px;
-  margin-top: -25px;
-  -webkit-transition: all 0.5s linear;
-  -moz-transition: all 0.5s linear;
-  -ms-transition: all 0.5s linear;
-  -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-}
-
-.question-area.area-open {
+.area-open {
   opacity: 1;
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../shared/index';
 import { SliderDirective } from '../shared/index';
 import { SliderAddDirective } from '../shared/index';
+import { TestComponent } from '../shared/index';
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -11,7 +12,7 @@ import { SliderAddDirective } from '../shared/index';
   selector: 'sd-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
-  directives: [SliderDirective,SliderAddDirective]
+  directives: [SliderDirective,SliderAddDirective, TestComponent]
 })
 export class HomeComponent implements OnInit {
 
@@ -99,9 +100,9 @@ export class HomeComponent implements OnInit {
   }
 
   openTestAreaForFilm(id) {
-    this.isTestAreaOpen = !this.isTestAreaOpen;
     this.answerArray = this.buildQuestionObj(id);
-  console.log(this.answerArray);
+    this.isTestAreaOpen = !this.isTestAreaOpen;
+    console.log(this.answerArray);
 }
 
   buildQuestionObj(id) {
