@@ -37,6 +37,7 @@ var filmService = {
                 uri: config.hostname + 'discover/movie?' + config.apiKeyAsParam +
                     '&with_genres=' + genre +
                     '&primary_release_year.gte=' + (year-YEAR_RANGE),
+                    // '&page=' + (Math.floor(Math.random() * (3 - 1)) + 1),
                     // '&vote_average.gte=' + (rating-VOTE_RANGE),
                 method: 'GET'
             };

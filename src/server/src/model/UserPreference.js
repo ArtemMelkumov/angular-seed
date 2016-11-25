@@ -6,8 +6,8 @@ var UserPreference = {
 
 };
 
-UserPreference.year = 2000;
-UserPreference.genres = { 18: 1, 14: 1, 36: 1, 12: 1}; //Map
+UserPreference.year;
+UserPreference.genres = {}; //Map
 UserPreference.rating = 7;
 
 module.exports = UserPreference;
