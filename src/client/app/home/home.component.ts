@@ -33,18 +33,34 @@ export class HomeComponent implements OnInit {
     touchMove: true
   };
 
+  public genresMap: Object = {
+  action: 28,
+  adventure: 12,
+  animation: 16,
+  comedy: 35,
+  crime: 80,
+  documentary: 99,
+  drama: 18,
+  family: 10751,
+  fantasy: 14,
+  history: 36,
+  horror: 27,
+  horror: 27,
+  music: 10402,
+  mystery: 9648,
+  romance:​ 10749,
+  scienceFiction: 878,
+  tvMovie: 10770,
+  thriller: 53,
+  war: 10752,
+  western: 37
+};
+
 
 
   isTestAreaOpen: boolean = false;
 
   constructor(public movieService: MovieService) {}
-
-  /*let genreMapper = {
-    1: "action",
-    2: "comdey",
-    3: "porno",
-    4: "black comedy"
-  };*/
 
   ngOnInit() {
     this.getMovies()
@@ -89,11 +105,31 @@ export class HomeComponent implements OnInit {
   }
 
   buildQuestionObj(id) {
+    var tempArray = [];
     var currentFilm = _.find(this.filmsList, elem => elem.id == id);
     var rightAnswer = {
       genre: currentFilm.genre[Math.floor(Math.random() * currentFilm.genre.length)],
       answer: true
     };
     this.answerArray.push(rightAnswer);
+    _.invert(this.genresMap);
+    var genresArray = _.keys(this.genresMap);
+    _.remove(genresArray,(elem) => {
+      return elem == this.answerArray[0].genre
+    })
+    while(tempArray.length != 3) {
+      var randomGenreId = genresArray[Math.floor(Math.random() * genresArray.genre.length)]
+      if(!(_.includes(tempArray,randomGenreId))){
+        tempArray.push(randomGenreId)
+      }
+    }
+    _.forEach(tempArray,(elem) => {
+      elem = {genre: elem, answer:false};
+      this.answerArray.push(elem);
+    })
+    _.forEach(this.answerArray, (elem) => {
+      elem.genre = this.genresMap[elem.genre];
+    })
+    return this.answerArray;
   }
 }
